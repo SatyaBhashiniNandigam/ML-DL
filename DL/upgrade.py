@@ -24,7 +24,7 @@ if acc3<80:
         print("sorry:( try again")
         exit()
     os.system("sed -i '/softmax/ i {}' /var/lib/jenkins/workspace/job2/train.py".format(y))
-    os.system("curl -u root:redhat http://192.168.99.108:8080/view/Ml%20+%20Jenkins/job/job2/build?token=satya")
+    os.system("curl -u root:redhat http://192.168.99.108:8080/view/mlops_task/job/job2/build?token=satya")
     acc = os.popen("cat /var/lib/jenkins/workspace/job2/accuracy.txt")
     acc1 = acc.read()
     print(acc1)
