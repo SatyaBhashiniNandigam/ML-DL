@@ -3,9 +3,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import joblib
 
-train_data = pd.read_csv('/mnt/train.csv')
-test_data = pd.read_csv('/mnt/titanic_test.csv')
-validation_data = pd.read_csv('/mnt/titanic_validation.csv')
+train_data = pd.read_csv('/code/train.csv')
+test_data = pd.read_csv('/code/titanic_test.csv')
+validation_data = pd.read_csv('/code/titanic_validation.csv')
 
 age = train_data['Age']
 
@@ -92,8 +92,8 @@ accuracy = float(report_new.split()[2])*100
 
 print("Your Accuracy is {}".format(accuracy))
 
-joblib.dump(model,'/mnt/Logistic_regression.pk1')
+joblib.dump(model,'/code/Logistic_regression.pk1')
 
 import os
-os.system("touch /mnt/accuracy.txt")
-os.system("echo {} > /mnt/accuracy.txt".format(accuracy))
+os.system("touch /code/accuracy.txt")
+os.system("echo {} > /code/accuracy.txt".format(accuracy))
